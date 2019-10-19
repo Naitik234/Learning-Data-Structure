@@ -3,7 +3,7 @@
 class cList{
    
    int count;
-   cNode* top;
+   cNode* head;
    public:
       cList();
       cList(cNode* &ptr);
@@ -15,6 +15,8 @@ class cList{
       cNode* removeAt(int index);
       bool isEmpty() const;
       bool isNotEmpty() const;
+      cNode& operator[](int index);
+      cList& swapNodesAt(int index1,int index2);
       int getCount();
       ~cList();
 

@@ -1,32 +1,32 @@
 #include"cList.h"
 
-cList::cList():top(NULL),count(0){
+cList::cList():head(NULL),count(0){
 }
 
-cList::cList(cNode* &ptr):top(ptr),count(1){
+cList::cList(cNode* &ptr):head(ptr),count(1){
 }
 
 bool cList::isEmpty()const{
-    if(top)
+    if(head)
         return false;
     else
         return true;
     
 }
 bool cList::isNotEmpty()const{
-    if(top)
+    if(head)
     return true;
     else
     return false;
 }
 
 cList::cList(const cList &src){
-    this->top=src.top;
+    this->head=src.head;
     this->count=src.count;
-    if(src.top){
+    if(src.head){
         cNode *sptr,*dptr;
-        dptr=top=new cNode(*src.top);
-        sptr=src.top->next;
+        dptr=head=new cNode(*src.head);
+        sptr=src.head->next;
         while(sptr){
             sptr->next=new cNode(*sptr);
             sptr=sptr->next;
@@ -42,26 +42,26 @@ cList& cList::operator=(const cList &robj){
     if(true)
     {
         cList temp;
-        temp.top=top;
+        temp.head=head;
     }
     if(true)
     {
         cList temp=robj;
-        top=temp.top;
-        temp.top=NULL;
+        head=temp.head;
+        temp.head=NULL;
     }
     return *this;
 }
 
 cList& cList::insert(cNode* &ptr){
-    if(top)
+    if(head)
     {
-        ptr->next=top;
-        top=ptr;
+        ptr->next=head;
+        head=ptr;
     }
     else
     {
-        top=ptr;
+        head=ptr;
         ptr->next=NULL;
     }
     
@@ -78,7 +78,7 @@ cList& cList::insertAt(int index,cNode* &ptr){
     if(index>count)
     index=count;
 
-    cNode *rptr=top;
+    cNode *rptr=head;
     for(int i=1;i<index;++i)
     rptr=rptr->next;
 
@@ -92,9 +92,9 @@ cList& cList::insertAt(int index,cNode* &ptr){
 
 cNode* cList::remove()
 {
-    if(top){
-        cNode *ptr=top;
-        top=top->next;
+    if(head){
+        cNode *ptr=head;
+        head=head->next;
         ptr->next=NULL;
         --count;
         return ptr;
@@ -106,7 +106,7 @@ cNode* cList::removeAt(int index){
     return remove();
     if(index>=count)
     index=count-1;
-    cNode *rptr=top;
+    cNode *rptr=head;
     for(int i=1;i<index;++i)
     rptr=rptr->next;
     cNode *ptr=rptr->next;
@@ -116,16 +116,32 @@ cNode* cList::removeAt(int index){
     return ptr;
 }
 
+cNode& cList::opeartor[](int index){
+  if(index<=0) 
+  return head;
+  if(index>=count){
+      index=count-1;
+      cNode *rptr=head;
+      for(int i=1;i<index;++i)
+      return *rptr;
+  }
+  return NUll;
+}
+
+cList& cList::swapNodesAt(int index1,int index2){
+    
+}
+
 int cList::getCount(){
     return count;
 }
 
 cList::~cList(){
-     cNode *ptr=top;
+     cNode *ptr=head;
      while(ptr){
          ptr=ptr->next;
-         delete top;
-         top=ptr;
+         delete head;
+         head=ptr;
      }
      count=0;
 }
