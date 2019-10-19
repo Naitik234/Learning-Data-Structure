@@ -18,6 +18,13 @@ cNode::cNode* setData(int data){
 cNode::void print()const{
 			cout<<data<<" ";
 		}
+cNode::int getPriority()const{
+	return priority;
+}
+
+cNode::void setPriority(int Prior){
+	this->priority=prior;
+}
 
 cNode::~cNode()
 {

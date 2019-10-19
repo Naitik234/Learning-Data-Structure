@@ -1,6 +1,7 @@
 class cNode
 {
 	int data;
+	int priority;
 public:
 	cNode *next;
 	cNode();
@@ -8,6 +9,8 @@ public:
 	int getData();
 	cNode* setData(int data);
 	void print()const;
+    int getPriority() const;
+	void setPriority(int prior);
 	~cNode();
 };
 

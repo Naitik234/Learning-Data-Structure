@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "cQue.h"
+#include "cPriorityQue.h"
 using namespace std;
 
 int main()
