@@ -7,7 +7,7 @@ cPriorityQue::cPriorityQue()
 cPriorityQue::cPriorityQue(cNode* &ptr):cQue(ptr){
 }
 
-cPriorityQue::cPriorityQue& add(cNode* &ptr){
+ cPriorityQue::add(cNode* &ptr){
 if(!top){
     top=tail=ptr;
     tail->next=ptr=NULL;
@@ -30,7 +30,7 @@ if(!top){
         return *this;
 }
 
-cNodePriorityQue::cPriorityQue(const cPriorityQue &src){
+cPriorityQue::cPriorityQue(const cPriorityQue &src){
     this->top=src.top;
     this->tail=src.tail;
     if(src.top){
@@ -47,14 +47,14 @@ cNodePriorityQue::cPriorityQue(const cPriorityQue &src){
     }
 }
 
-cPriorityQue::cPriorityQue& operator=(const cPriorityQue &robj){
+cPriorityQue& cPriorityQue::operator=(const cPriorityQue &robj){
     if(this==robj)
     return &this;
-    ((cQUe*)this)->operator=((cQue&)robj);
+    ((cQUe*)this)->operator=((cQue&)robj);    //
     return *this;
 }
 
-cPriorityQue::void print()const{
+void cPriorityQue::print()const{
     return cQue::print();
 }
 

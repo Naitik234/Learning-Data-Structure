@@ -8,21 +8,21 @@ cQue::cQue():tail(NULL)
 cQue::cQue(cNode* &ptr):cStack(ptr),tail(top){
 	}
 	
-cQue::bool isNotEmpty()const{
+bool cQue::isNotEmpty()const{
 	return cStack::isNotEmpty();
 	}
 	
-cQue::bool isEmpty()const{
+bool cQue::isEmpty()const{
 	return cStack::isEmpty();
 	}
 	
-cQue::cNode* remove(){
+cNode* cQue::remove(){
 		if(!top->next)
 		tail=NULL;
 		return cStack::pop();
 	}
 	
-cQue::cQue& Add(cNode* &ptr){
+cQue& cQue::Add(cNode* &ptr){
 		if(tail){
 			tail->next=ptr;
 			tail=tail->next;
@@ -37,7 +37,7 @@ cQue::cQue& Add(cNode* &ptr){
 		return *this;
 	}
 	
-cQue::void print()const{            //
+void cQue::print()const{            //
 	cStack::print();
 	}
 	
@@ -57,7 +57,7 @@ cQue::cQue(const cQue &src){           ///
 		}
 	}
 	
-cQue::cQue& operator=(const cQue& obj){
+cQue& cQue::operator=(const cQue& obj){
 			if(this==obj)
 			return *this;
 			if(true){

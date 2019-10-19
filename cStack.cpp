@@ -10,35 +10,35 @@ cStack::cStack (cNode* &ptr):top(ptr){
 			return *this;
 		}
 
-cStack::bool isNotEmpty()const{
+bool cStack::isNotEmpty()const{
 		if(top)
 		return true;
 		else
 		return false;
 		}
 		
-cStack::bool isEmpty()const{
+bool cStack::isEmpty()const{
 		if(top)
 		return false;
 		else
 		return true;
 		}
 		
-cStack::cStack& push(cNode* &ptr){
+cStack& cStack::push(cNode* &ptr){
 			ptr->next=top;
 			top=ptr;
 			ptr=NULL;                     //
 			return *this;
 		}
 
-cStack::cNode* pop(){
+cNode* cStack::pop(){
 			cNode *ptr=top;
 			top=top->next;
 			ptr->next=NULL;
 			return ptr;
 		}
 		
-cStack::void print()const{
+void cStack::print()const{
 		if(!top)
 		cout<<"\n Stack is Empty!";
 		else{
@@ -66,7 +66,7 @@ cStack::cStack(const cStack &src){
 			}
 		}
 		
-cStack::cStack& operator=(const cStack& obj){
+cStack& cStack::operator=(const cStack& obj){
 			if(this==obj)
 			return *this;
 			if(true){
