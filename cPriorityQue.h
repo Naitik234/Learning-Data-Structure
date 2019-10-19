@@ -1,6 +1,6 @@
 #pragma once
-#include"cStack.h"
-class cPriorityQue
+#include"cQue.h"
+class cPriorityQue:public cQue
 {
 
 public:

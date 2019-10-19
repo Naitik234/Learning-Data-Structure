@@ -1,5 +1,7 @@
+#include <iostream>
 #include "cQue.h"
 
+using namespace std;
 
 cQue::cQue():tail(NULL)
 {
@@ -22,7 +24,7 @@ cNode* cQue::remove(){
 		return cStack::pop();
 	}
 	
-cQue& cQue::Add(cNode* &ptr){
+cQue& cQue::add(cNode* &ptr){
 		if(tail){
 			tail->next=ptr;
 			tail=tail->next;
@@ -58,14 +60,15 @@ cQue::cQue(const cQue &src){           ///
 	}
 	
 cQue& cQue::operator=(const cQue& obj){
-			if(this==obj)
+			if(this==&obj)
 			return *this;
 			if(true){
-				cStack temp;
+				cQue temp;
 				temp.top=top;
+				temp.tail=tail;
 			}
 			if(true){
-				cQue temp=obj;         //
+				cQue temp=obj; 
 				top=temp.top;
 				tail=temp.tail;
 				temp.top=NULL;
@@ -74,7 +77,16 @@ cQue& cQue::operator=(const cQue& obj){
 			return *this;
 		}
 
-cQue::~cQue():tail(NULL)
+cQue::~cQue()
 {
-	return cStack::~cStack()
+ cNode *ptr = top;
+  
+  tail = NULL;
+
+  while (ptr)
+   {
+     ptr = ptr -> next;
+     delete top;
+     top = ptr;
+   }
 }

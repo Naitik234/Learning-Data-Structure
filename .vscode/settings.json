@@ -1,5 +1,15 @@
 {
     "files.associations": {
-        "queue": "cpp"
+        "queue": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "string": "cpp",
+        "string_view": "cpp"
     }
 }

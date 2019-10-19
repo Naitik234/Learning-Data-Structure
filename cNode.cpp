@@ -1,4 +1,7 @@
+#include <iostream>
 #include "cNode.h"
+
+using namespace std;
 
 cNode::cNode()
 {
@@ -7,23 +10,23 @@ cNode::cNode()
 cNode::cNode(int d):data(d){
 }
 
-cNode::int getData(){
+int cNode::getData(){
 			return data;
 		}
 
-cNode::cNode* setData(int data){
+cNode* cNode::setData(int data){
         	this->data=data;
 		}
 		
-cNode::void print()const{
+void cNode::print()const{
 			cout<<data<<" ";
 		}
-cNode::int getPriority()const{
+int cNode::getPriority()const{
 	return priority;
 }
 
-cNode::void setPriority(int Prior){
-	this->priority=prior;
+void cNode::setPriority(int Prior){
+	this->priority=Prior;
 }
 
 cNode::~cNode()

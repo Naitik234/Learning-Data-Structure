@@ -1,5 +1,7 @@
+#include <iostream>
 #include "cStack.h"
 
+using namespace std;
 
 cStack::cStack():top(NULL){
 		}
@@ -7,7 +9,6 @@ cStack::cStack():top(NULL){
 cStack::cStack (cNode* &ptr):top(ptr){
 			top->next=NULL;
 			ptr=NULL;
-			return *this;
 		}
 
 bool cStack::isNotEmpty()const{
@@ -67,7 +68,7 @@ cStack::cStack(const cStack &src){
 		}
 		
 cStack& cStack::operator=(const cStack& obj){
-			if(this==obj)
+			if(this== &obj)
 			return *this;
 			if(true){
 				cStack temp;

@@ -1,4 +1,7 @@
+#include<iostream>
 #include"cList.h"
+
+using namespace std;
 
 cList::cList():head(NULL),count(0){
 }
@@ -37,7 +40,7 @@ cList::cList(const cList &src){
 }
 
 cList& cList::operator=(const cList &robj){
-    if(this==robj)
+    if(this==&robj)
     return*this;
     if(true)
     {
@@ -116,16 +119,15 @@ cNode* cList::removeAt(int index){
     return ptr;
 }
 
-cNode& cList::opeartor[](int index){
+cNode& cList::operator[](int index){
   if(index<=0) 
-  return head;
-  if(index>=count){
+  return *head;
+  if(index>=count)
       index=count-1;
+      
       cNode *rptr=head;
       for(int i=1;i<index;++i)
       return *rptr;
-  }
-  return NUll;
 }
 
 cList& cList::swapNodesAt(int index1,int index2){

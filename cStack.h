@@ -1,6 +1,7 @@
 #include "cNode.h"
 class cStack
 {
+protected:
 	cNode* top;
 public:
 	cStack();

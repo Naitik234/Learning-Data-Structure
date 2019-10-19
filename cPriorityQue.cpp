@@ -1,4 +1,7 @@
+#include <iostream>
 #include "cPriorityQue.h"
+
+using namespace std;
 
 cPriorityQue::cPriorityQue()
 {
@@ -7,20 +10,20 @@ cPriorityQue::cPriorityQue()
 cPriorityQue::cPriorityQue(cNode* &ptr):cQue(ptr){
 }
 
- cPriorityQue::add(cNode* &ptr){
+cPriorityQue& cPriorityQue::add(cNode* &ptr){
 if(!top){
     top=tail=ptr;
     tail->next=ptr=NULL;
     }
     else {
-        if(top->priority<ptr->priority)
+        if(top->getPriority()<ptr->getPriority())
         cStack::push(ptr);    
-        else if(tail->priority>=ptr->priority)
+        else if(tail->getPriority()>=ptr->getPriority())
         cQue::add(ptr);
         else
         {
             cNode *rptr=top;
-            while(rptr->priority>=ptr->priority)
+            while(rptr->getPriority()>=ptr->getPriority())
             rptr=rptr->next;
             ptr->next=rptr->next;
             rptr->next=ptr;
@@ -48,13 +51,13 @@ cPriorityQue::cPriorityQue(const cPriorityQue &src){
 }
 
 cPriorityQue& cPriorityQue::operator=(const cPriorityQue &robj){
-    if(this==robj)
-    return &this;
-    ((cQUe*)this)->operator=((cQue&)robj);    //
+    if(this==&robj)
+    return *this;
+    ((cQue*)this)->operator=((cQue&)robj);    //
     return *this;
 }
 
-void cPriorityQue::print()const{
+void cPriorityQue::Print()const{
     return cQue::print();
 }
 

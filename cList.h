@@ -8,10 +8,10 @@ class cList{
       cList();
       cList(cNode* &ptr);
       cList(const cList &src);
-      cList& operator=(const cList src);
-      cList& insert(cList* &ptr);
+      cList& operator=(const cList &src);
+      cList& insert(cNode* &ptr);
       cList& insertAt(int index,cNode* &ptr);
-      cNode* remoe();
+      cNode* remove();
       cNode* removeAt(int index);
       bool isEmpty() const;
       bool isNotEmpty() const;
