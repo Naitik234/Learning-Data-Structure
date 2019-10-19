@@ -1,9 +1,6 @@
-#include"cNode.h"
-#include"cQue.h"
-#include"cStack.h"
-#include"cPriorityQue.h"
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
+#include "cQue.h"
 using namespace std;
 
 int main()

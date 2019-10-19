@@ -1,49 +1,44 @@
-#include<iostream>
-using namespace std;
-#include"cNode.cpp"
-class cStack{                  //class for stack which uses push and pop to add or remove data
-	cNode* top;
-	
-	public:
-		//default constructor
-		cStack():pop(NULL){
+#include "cStack.h"
+
+
+cStack::cStack():top(NULL){
 		}
-		//constructor that initializes member elements
-		cStack& (cNode& *ptr):top(ptr){
+		
+cStack::cStack (cNode* &ptr):top(ptr){
 			top->next=NULL;
 			ptr=NULL;
 			return *this;
 		}
-		//to check weather stack is empty or not
-		bool isNotEmpty()const{
+
+cStack::bool isNotEmpty()const{
 		if(top)
 		return true;
 		else
 		return false;
 		}
-		//to check weather stack is empty or not
-		bool isEmpty()const{
+		
+cStack::bool isEmpty()const{
 		if(top)
 		return false;
 		else
 		return true;
 		}
-		//Used to add a new node in stack
-		cStack& push(cNode& *ptr){
+		
+cStack::cStack& push(cNode* &ptr){
 			ptr->next=top;
 			top=ptr;
 			ptr=NULL;                     //
 			return *this;
 		}
-		//Used to remove a node from stack
-		cNode* pop(){
+
+cStack::cNode* pop(){
 			cNode *ptr=top;
 			top=top->next;
 			ptr->next=NULL;
 			return ptr;
 		}
-		//print the data of all nodes 
-		void print()const{
+		
+cStack::void print()const{
 		if(!top)
 		cout<<"\n Stack is Empty!";
 		else{
@@ -55,8 +50,8 @@ class cStack{                  //class for stack which uses push and pop to add 
 			}
 		}
 		}
-		//copy constructor
-		cStack(const cStack &src){
+		
+cStack::cStack(const cStack &src){
 			this->top=src.top;
 			if(src.top){
 				cNode *sptr,*dptr;
@@ -70,8 +65,8 @@ class cStack{                  //class for stack which uses push and pop to add 
 				
 			}
 		}
-		//assignment operator overloading
-		cStack& operator=(const cStack& obj){
+		
+cStack::cStack& operator=(const cStack& obj){
 			if(this==obj)
 			return *this;
 			if(true){
@@ -85,15 +80,14 @@ class cStack{                  //class for stack which uses push and pop to add 
 			}
 			return *this;
 		}
-		//destructor
-		~cStack(){
-			cNode *ptr=top;
+
+cStack::~cStack()
+{
+	cNode *ptr=top;
 			while(ptr)
 			{
 				ptr=ptr->next;
 				delete top;
 				top=ptr;
 			}
-		}
-		
-};
+}
