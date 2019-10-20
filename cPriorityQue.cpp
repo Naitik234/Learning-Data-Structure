@@ -10,6 +10,14 @@ cPriorityQue::cPriorityQue()
 cPriorityQue::cPriorityQue(cNode* &ptr):cQue(ptr){
 }
 
+bool cPriorityQue::isEmpty()const{
+   return cQue::isEmpty();
+}
+
+bool cPriorityQue::isNotEmpty()const{
+   return cQue::isNotEmpty();
+}
+
 cPriorityQue& cPriorityQue::add(cNode* &ptr){
 if(!top){
     top=tail=ptr;
@@ -31,6 +39,10 @@ if(!top){
         }   
         }
         return *this;
+}
+
+cNode* cPriorityQue::remove(){
+    return cQue::remove();
 }
 
 cPriorityQue::cPriorityQue(const cPriorityQue &src){

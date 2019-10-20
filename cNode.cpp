@@ -13,7 +13,7 @@ cNode::cNode(int d):data(d), priority(0){
 cNode::cNode(int d, int p):data(d), priority(p)
 {}
 
-int cNode::getData(){
+int cNode::getData()const{
 			return data;
 		}
 
@@ -30,6 +30,13 @@ int cNode::getPriority()const{
 
 void cNode::setPriority(int Prior){
 	this->priority=Prior;
+}
+
+bool cNode::isSimilar(cNode* &ptr){
+	if(ptr->getData()==this->getData())
+	  if(ptr->getPriority()==this->getPriority())
+	    return true;
+	return false;
 }
 
 cNode::~cNode()

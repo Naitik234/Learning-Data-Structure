@@ -1,20 +1,22 @@
 #include"cNode.cpp"
-#include"cStack.cpp" 
 #include"cQue.cpp"
+#include"cStack.cpp"
+#include"cPriorityQue.cpp"
 #include<iostream>
 using namespace std;
 int main(){
     cNode *ptr=new cNode;
     ptr->setData(3);
-    cQue que1(ptr);                //checking of constructor
-    que1.print();
+    ptr->setPriority(1);
+    cPriorityQue pQue1(ptr);                //checking of constructor
+    pQue1.print();
     cout<<endl<<endl<<endl;
     for(int i=0;i<10;i++)
     cout<<"-";
 
 
     cout<<endl;
-    if(que1.isEmpty())               //checking of isEmpty function
+    if(pQue1.isEmpty())               //checking of isEmpty function
     cout<<"Que is Empty"<<endl;
     else
     cout<<"Que is not Empty"<<endl;
@@ -31,44 +33,44 @@ int main(){
     ptrArray[1]->setData(0);
     ptrArray[2]->setData(7);
     ptrArray[3]->setData(5);
-    que1.add(ptrArray[0]).add(ptrArray[1]).add(ptrArray[2]).add(ptrArray[3]);          //checking of add function
-    que1.print();
+    pQue1.add(ptrArray[0]).add(ptrArray[1]).add(ptrArray[2]).add(ptrArray[3]);          //checking of add function
+    pQue1.print();
     cout<<endl<<endl<<endl;
     for(int i=0;i<10;i++)
     cout<<"-";
 
 
     cout<<endl;
-    que1.remove();                         //checking of remove function
-    que1.print();
+    pQue1.remove();                         //checking of remove function
+    pQue1.print();
     cout<<endl<<endl<<endl;
     for(int i=0;i<10;i++)
     cout<<"-";
 
 
     cout<<endl;
-    cQue que2(que1);           //checking of copy constructor
-    cout<<"que1 is ";
-    que1.print();
+    cPriorityQue pQue2(pQue1);           //checking of copy constructor
+    cout<<"pQue1 is ";
+    pQue1.print();
     cout<<endl;
-    cout<<"que2 is ";          
-    que2.print();             // //checking of print function
+    cout<<"pQue2 is ";          
+    pQue2.print();                    //checking of print function
     cout<<endl<<endl<<endl;    
     for(int i=0;i<10;i++)
     cout<<"-";
 
 
     cout<<endl;
-    cQue que3;
-    que3=que1;             //checking of assignment operator overloading
-    cout<<"que1 is ";
-    que1.print();
+    cPriorityQue pQue3;
+    pQue3=pQue1;             //checking of assignment operator overloading
+    cout<<"pQue1 is ";
+    pQue1.print();
     cout<<endl;
-    cout<<"que3 is ";
-    que3.print();
+    cout<<"pQue3 is ";
+    pQue3.print();
     cout<<endl<<endl<<endl;    
     for(int i=0;i<10;i++)
     cout<<"-";
 
-   return 0;
+    return 0;
 }
