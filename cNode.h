@@ -1,5 +1,6 @@
 #pragma once
-#include"fstream"
+#include<fstream>
+using namespace std;
 class cNode
 {
 	int data;
