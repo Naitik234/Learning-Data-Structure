@@ -147,8 +147,24 @@ cList& cList::swapNodesAt(int index1,int index2){
     insertAt((index2-1),ptr);
     ptr=removeAt(index2);
     insertAt((index1),ptr);
+    return *this; 
+}
+
+cList& cList::reverse(){
+    if(count<2)
     return *this;
-    
+    cNode *ptr,**ptrArray=new cNode *[count];
+    ptr=head;
+    for(int i=0;i<count;++i){
+        ptrArray[i]=ptr;
+        ptr=ptr->next;
+    }
+    for(int i=1;i<count;++i)
+    ptrArray[i]->next=ptrArray[i-1];
+    ptrArray[0]->next=NULL;
+    head=ptrArray[count-1];
+    delete[] ptrArray;
+    return *this;
 }
 
 cList& cList::operator+(const cList &src){

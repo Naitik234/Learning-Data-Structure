@@ -19,6 +19,7 @@ class cList{
       cNode& operator[](int index);
       cList& swapNodesAt(int index1,int index2);
       cList& operator+(const cList &src);
+      cList& reverse();
       void print()const;
       int getCount();
       ~cList();
