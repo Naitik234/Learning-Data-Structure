@@ -187,6 +187,13 @@ cList& cList::operator+(const cList &src){
     return*this;
 }
 
+void cList::deleteNodes(cNode* &ptr){
+    if(ptr){
+        deleteNodes(ptr->next);
+        delete ptr;
+    }
+}
+
 void cList::print()const{
      if(!head)
 		cout<<"\n Stack is Empty!";
