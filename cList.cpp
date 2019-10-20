@@ -159,6 +159,26 @@ cList& cList::swapNodesAt(int index1,int index2){
     
 }
 
+cList& cList::operator+(const cList &src){
+    if(src.count==0)
+    return *this;
+    cList temp =src;
+    if(!head){
+        head=temp.head;
+        count=temp.count;
+    }
+    else{
+        cNode *ptr=head;
+        for(int i=0;i<count;++i)
+        ptr=ptr->next;
+        
+        ptr->next=temp.head;
+        count += temp.count;
+    }
+    temp.head=NULL;
+    return*this;
+}
+
 void cList::print()const{
      if(!head)
 		cout<<"\n Stack is Empty!";

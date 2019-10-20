@@ -18,6 +18,7 @@ class cList{
       bool isNotEmpty() const;
       cNode& operator[](int index);
       cList& swapNodesAt(int index1,int index2);
+      cList& operator+(const cList &src);
       void print()const;
       int getCount();
       ~cList();
