@@ -1,3 +1,4 @@
+#pragma once
 #include"cNode.h"
 
 class cList{
@@ -17,6 +18,7 @@ class cList{
       bool isNotEmpty() const;
       cNode& operator[](int index);
       cList& swapNodesAt(int index1,int index2);
+      void print()const;
       int getCount();
       ~cList();
 

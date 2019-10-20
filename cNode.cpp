@@ -3,12 +3,15 @@
 
 using namespace std;
 
-cNode::cNode()
+cNode::cNode() :data(0),priority(0)
 {
 }
 
-cNode::cNode(int d):data(d){
+cNode::cNode(int d):data(d), priority(0){
 }
+
+cNode::cNode(int d, int p):data(d), priority(p)
+{}
 
 int cNode::getData(){
 			return data;

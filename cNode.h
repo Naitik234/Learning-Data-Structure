@@ -6,6 +6,7 @@ public:
 	cNode *next;
 	cNode();
 	cNode(int d);
+	cNode(int d, int p);
 	int getData();
 	cNode* setData(int data);
 	void print()const;
