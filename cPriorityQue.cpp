@@ -8,6 +8,7 @@ cPriorityQue::cPriorityQue()
 }
 
 cPriorityQue::cPriorityQue(cNode* &ptr):cQue(ptr){
+    ptr=NULL;
 }
 
 bool cPriorityQue::isEmpty()const{

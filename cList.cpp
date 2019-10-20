@@ -7,6 +7,8 @@ cList::cList():head(NULL),count(0){
 }
 
 cList::cList(cNode* &ptr):head(ptr),count(1){
+    head->next=NULL;
+    ptr=NULL;
 }
 
 bool cList::isEmpty()const{
@@ -70,6 +72,7 @@ cList& cList::insert(cNode* &ptr){
     
     ptr=NULL;
     ++count;
+    return *this;
 }
 
 cList& cList::insertAt(int index,cNode* &ptr){
@@ -102,6 +105,7 @@ cNode* cList::remove()
         --count;
         return ptr;
     }
+    return NULL;
 }
 
 cNode* cList::removeAt(int index){
@@ -126,7 +130,8 @@ cNode& cList::operator[](int index){
       index=count-1;
       
       cNode *rptr=head;
-      for(int i=1;i<index;++i)
+      for(int i=1;i<=index;++i)
+      rptr=rptr->next;
       return *rptr;
 }
 
@@ -177,14 +182,14 @@ cList& cList::operator+(const cList &src){
     }
     else{
         cNode *ptr=head;
-        for(int i=0;i<count;++i)
+        for(int i=0;i<count-1;++i)
         ptr=ptr->next;
         
         ptr->next=temp.head;
         count += temp.count;
     }
     temp.head=NULL;
-    return*this;
+    return *this;
 }
 
 void cList::deleteNodes(cNode* &ptr){
@@ -196,7 +201,7 @@ void cList::deleteNodes(cNode* &ptr){
 
 void cList::print()const{
      if(!head)
-		cout<<"\n Stack is Empty!";
+		cout<<"\n List is Empty!";
 		else{
 			cNode *ptr=head;
 			while(ptr)

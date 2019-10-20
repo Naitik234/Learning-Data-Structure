@@ -82,6 +82,81 @@ cStack& cStack::operator=(const cStack& obj){
 			return *this;
 		}
 
+cStack::cStack(ifstream &inFile) : top(NULL), count(0)
+{
+  inFile.read((char *)&this->count, sizeof(count));
+
+  if (count > 0)
+  {
+    cNode *ptr;
+    ptr = top = new cNode(inFile);
+
+    for (int i = 1; i < count; ++i)
+    {
+      ptr->next = new cNode(inFile);
+      ptr = ptr->next;
+    }
+
+    ptr->next = NULL;
+  }
+}
+
+void cStack::writeToFile(ofstream &oFile)
+{
+  if (!oFile.is_open())
+  {
+    cerr << "\n cStack::writeToFile:File is not open!";
+    exit(1);
+  }
+
+  oFile.write((char *)&count, sizeof(count));
+
+  if (count > 0)
+  {
+    cNode *ptr = top;
+
+    for (int i = 0; i < count; ++i)
+    {
+      ptr->writeNodeToFile(oFile);
+      ptr = ptr->next;
+    }
+  }
+}
+
+cStack &cStack::readFromFile(ifstream &iFile)
+{
+  if (!iFile.is_open())
+  {
+    cerr << "\n cStack::readFromFile():File is not open!";
+    exit(1);
+  }
+
+  if (true)
+  {
+    cStack temp;
+    temp.top = this->top;
+  }
+
+  iFile.read((char *)&count, sizeof(count));
+
+  top = NULL;
+
+  if (count > 0)
+  {
+    cNode *ptr;
+    ptr = top = new cNode(iFile);
+
+    for (int i = 1; i < count; ++i)
+    {
+      ptr->next = new cNode(iFile);
+      ptr = ptr->next;
+    }
+
+    ptr->next = NULL;
+  }
+  return *this;
+}
+
 cStack::~cStack()
 {
 	cNode *ptr=top;

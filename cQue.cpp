@@ -8,7 +8,8 @@ cQue::cQue():tail(NULL)
 }
 
 cQue::cQue(cNode* &ptr):cStack(ptr),tail(top){
-	}
+	ptr=NULL;
+}
 	
 bool cQue::isNotEmpty()const{
 	return cStack::isNotEmpty();

@@ -1,4 +1,5 @@
 #pragma once
+#include"fstream"
 class cNode
 {
 	int data;
@@ -8,12 +9,16 @@ public:
 	cNode();
 	cNode(int d);
 	cNode(int d, int p);
+	cNode(ifstream &inFile);
+	cNode(ofstream &ofile);
 	int getData()const;
 	void setData(int data);
 	void print()const;
     int getPriority() const;
 	bool isSimilar(cNode* &ptr);
 	void setPriority(int prior);
+    void writeNodeToFile(ofstream &outData); 
+    void readNodeFromFile(ifstream &inData);
 	~cNode();
 };
 
