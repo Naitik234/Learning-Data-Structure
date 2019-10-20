@@ -41,7 +41,7 @@ cNode* cStack::pop(){
 		
 void cStack::print()const{
 		if(!top)
-		cout<<"\n Stack is Empty!";
+		cout<<"\n Data Structure is Empty!";
 		else{
 			cNode *ptr=top;
 			while(ptr)

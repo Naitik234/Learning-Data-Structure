@@ -1,3 +1,4 @@
+#pragma once
 #include "cNode.h"
 class cStack
 {

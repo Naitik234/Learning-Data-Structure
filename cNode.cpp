@@ -17,7 +17,7 @@ int cNode::getData(){
 			return data;
 		}
 
-cNode* cNode::setData(int data){
+void cNode::setData(int data){
         	this->data=data;
 		}
 		
