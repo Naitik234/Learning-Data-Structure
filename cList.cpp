@@ -135,26 +135,18 @@ cList& cList::swapNodesAt(int index1,int index2){
     index1=0;
     if(index2<0)
     index2=0;
-    if(index1>count)
+    if(index1>=count)
     index1=count-1;
-    if(index2>count)
+    if(index2>=count)
     index2=count-1;
     if(index1==index2)
     return *this;
-    if(index1<index2)
-    {
-        cNode *ptr = removeAt(index1);
-        insertAt(index2-1, ptr);
-        ptr=removeAt(index2);
-        insertAt(index1,ptr);
-    }
-    else
-    {
-        cNode* ptr=removeAt(index2);
-        insertAt(index1-1,ptr);
-        ptr=removeAt(index1);
-        insertAt(index2,ptr);
-    }
+    if(index1>index2)
+    swap(index1,index2);
+    cNode *ptr=removeAt(index1);
+    insertAt((index2-1),ptr);
+    ptr=removeAt(index2);
+    insertAt((index1),ptr);
     return *this;
     
 }
