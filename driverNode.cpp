@@ -44,17 +44,15 @@ int main()
     for (int i = 0; i < 10; i++)
         cout << "-";
 
-
     cout << endl;
     ptr->setData(65);
     ptr->setPriority(2);
-    cout<<"Data is "<<ptr->getData()<<" Priority is "<<ptr->getPriority();
+    cout << "Data is " << ptr->getData() << " Priority is " << ptr->getPriority();
     cout << endl
          << endl
          << endl;
     for (int i = 0; i < 10; i++)
         cout << "-";
-
 
     cout << endl;
     cNode *ptr1, *ptr2;
