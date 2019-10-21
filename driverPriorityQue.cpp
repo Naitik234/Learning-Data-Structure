@@ -6,6 +6,7 @@
 using namespace std;
 int main()
 {
+    cout << "Test 1" << endl;
     cNode *ptr = new cNode;
     ptr->setData(3);
     ptr->setPriority(1);
@@ -18,6 +19,7 @@ int main()
         cout << "-";
 
     cout << endl;
+    cout << "Test 2" << endl;
     if (pQue1.isEmpty()) //checking of isEmpty function
         cout << "Que is Empty" << endl;
     else
@@ -29,6 +31,7 @@ int main()
         cout << "-";
 
     cout << endl;
+    cout << "Test 3" << endl;
     cNode **ptrArray = new cNode *[4];
     for (int i = 0; i < 4; ++i)
         ptrArray[i] = new cNode;
@@ -45,6 +48,7 @@ int main()
         cout << "-";
 
     cout << endl;
+    cout << "Test 4" << endl;
     pQue1.remove(); //checking of remove function
     pQue1.print();
     cout << endl
@@ -54,6 +58,7 @@ int main()
         cout << "-";
 
     cout << endl;
+    cout << "Test 5" << endl;
     cPriorityQue pQue2(pQue1); //checking of copy constructor
     cout << "pQue1 is ";
     pQue1.print();
@@ -67,6 +72,7 @@ int main()
         cout << "-";
 
     cout << endl;
+    cout << "Test 6" << endl;
     cPriorityQue pQue3;
     pQue3 = pQue1; //checking of assignment operator overloading
     cout << "pQue1 is ";

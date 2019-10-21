@@ -4,7 +4,7 @@
 using namespace std;
 int main()
 {
-
+    cout << "Test 1" << endl;
     cNode *ptr = new cNode(3, 2); //checking of constructor
     ptr->print();                 //checking print function
     cout << endl
@@ -35,6 +35,7 @@ int main()
     n5->readNodeFromFile(inFile); //
     n6->readNodeFromFile(inFile); //
 
+    cout << "Test 2" << endl;
     n4->print();
     n5->print();
     n6->print();
@@ -45,6 +46,7 @@ int main()
         cout << "-";
 
     cout << endl;
+    cout << "Test 3" << endl;
     ptr->setData(65);
     ptr->setPriority(2);
     cout << "Data is " << ptr->getData() << " Priority is " << ptr->getPriority();
@@ -55,6 +57,7 @@ int main()
         cout << "-";
 
     cout << endl;
+    cout << "Test 4" << endl;
     cNode *ptr1, *ptr2;
     ptr1 = new cNode;
     ptr2 = new cNode;
