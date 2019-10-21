@@ -39,15 +39,15 @@ cList::cList(const cList &src)
         sptr = src.head->next;
         while (sptr)
         {
-            sptr->next = new cNode(*sptr);
+            dptr->next = new cNode(*sptr);
             sptr = sptr->next;
             dptr = dptr->next;
         }
     }
 }
 
-cList &cList::operator=(const cList &robj)
-{
+cList& cList::operator=(const cList &robj)
+{  
     if (this == &robj)
         return *this;
     if (true)
@@ -210,11 +210,39 @@ cList &cList::operator+(const cList &src)
 
 void cList::deleteNodes(cNode *&ptr)
 {
+    cNode *rptr=head;
+    for(int i=0;i<count;i++)
+    {
+      if(rptr->next==ptr)
+      break;
+      rptr=rptr->next;
+    }
+    
     if (ptr)
     {
         deleteNodes(ptr->next);
         delete ptr;
     }
+    rptr->next=NULL;
+   
+}
+
+bool cList::isSimilar(const cList &robj){
+    cNode *rptr,*sptr;
+    rptr=this->head;
+    sptr=robj.head;
+    for(int i=0;i<count;++i)
+    {
+        if(rptr->isSimilar(sptr))
+        {
+              rptr=rptr->next;
+              sptr=sptr->next;
+        }
+        else
+        return false;
+        
+    }
+    return true;
 }
 
 void cList::print() const

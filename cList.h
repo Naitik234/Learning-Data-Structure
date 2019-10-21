@@ -23,6 +23,7 @@ public:
    cList &operator+(const cList &src);
    cList &reverse();
    void deleteNodes(cNode *&ptr);
+   bool isSimilar(const cList &robj);
    void print() const;
    int getCount();
    ~cList();

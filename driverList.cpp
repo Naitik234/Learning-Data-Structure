@@ -94,7 +94,8 @@ int main()
     for (int i = 0; i < 10; i++)
         cout << "-";
 
-    /* cout<<endl;
+
+    cout<<endl;
     cNode **ptrArray=new cNode *[4];
     for(int i=0;i<4;++i)
     ptrArray[i]=new cNode;
@@ -104,18 +105,18 @@ int main()
     ptrArray[3]->setData(5);
     cList list2;
     list2.insert(ptrArray[0]).insert(ptrArray[1]).insert(ptrArray[2]).insert(ptrArray[3]);
-    list1+list2;                      //checking addition overloading sunction
+    list1+list2;                      //checking addition overloading function
     list1.print();
     cout<<endl<<endl<<endl;
     for(int i=0;i<10;i++)
-    cout<<"-";  */
+    cout<<"-";
 
-    /*cout<<endl;
+    cout<<endl;
     cList list3(list1);       //checking copy constructor function
     list3.print();
     cout<<endl<<endl<<endl;
     for(int i=0;i<10;i++)
-    cout<<"-"; */
+    cout<<"-";
 
     cout << endl;
     cList list4;
@@ -135,13 +136,23 @@ int main()
     for (int i = 0; i < 10; i++)
         cout << "-";
 
-    /* cout<<endl;
-    ptr=&list1[0];
+    cout<<endl;
+    ptr=&list1[3];
     list1.deleteNodes(ptr);      //checking deleteNodes function
     list1.print();
     cout<<endl<<endl<<endl;
     for(int i=0;i<10;i++)
-    cout<<"-"; */
+    cout<<"-";
+
+    cout<<endl;
+    list2=list1;
+    if(list1.isSimilar(list2))
+    cout<<"List1 is similar to List2";
+    else
+    cout<<"List1 is not similar to List2";
+    cout<<endl<<endl<<endl;
+    for(int i=0;i<10;i++)
+    cout<<"-";
 
     return 0;
 }
