@@ -3,8 +3,8 @@ I made this repository for learning [Data Structure](https://en.wikipedia.org/wi
 I have made following structure in C++.
 ## Structures
 * Stack
-* Que
+* Queue
 * List  
 
-This Repository contains Constructor, Destructor, Copy constructor, Operator Overloading, Adding or Removing, Reversing list, Push and Pop functions etc. 
+All these structures are using a cNode class which is also included in this repo. This Repository contains Constructor, Destructor, Copy constructor, Operator Overloading, Adding or Removing, Reversing list, Push and Pop functions etc. 
 
