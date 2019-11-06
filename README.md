@@ -6,6 +6,6 @@ I have made following structure in C++.
 * Queue
 * List  
 
-All these structures are using a cNode class which is also included in this repo. This Repository contains Constructor, Destructor, Copy constructor, Operator Overloading, Adding or Removing, Reversing list, Push and Pop functions etc. 
+All these structures are using a cNode class which is also included in this repo. This Repository contains Constructor, Destructor, Copy constructor, Operator Overloading, Adding or Removing, Reversing list, Push and Pop functions etc.\ 
 This repo also include driver functions for classess defined here.
 
